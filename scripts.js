@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
     //Created element called divcontainer
     let divContainer = document.createElement('div');
     divContainer.className = 'header-container';
-    //document.body.appendChild(divContainer);
+
 
     //Created h1 element and text node then appended text node to h1 element.
     let h1 = document.createElement('h1');
@@ -79,20 +79,50 @@ window.addEventListener('DOMContentLoaded', function () {
     divContainer.appendChild(h6);
     document.body.appendChild(divContainer);
 
-    let button = document.createElement('button');
-    let btnText = document.createTextNode('Double Click Me!');
-    button.appendChild(btnText);
-    document.body.appendChild(button);
-    
-    button.addEventListener('dblclick', function () {
+    //let button = document.createElement('button');
+    //let btnText = document.createTextNode('Double Click Me!');
+    // button.appendChild(btnText);
+    //document.body.appendChild(button);
 
-    let colors = ['pink', 'blue', 'orange', 'black', 'green', 'brown', 'yellow', 'red'];
+    let colors = [
+        'pink',
+        'blue',
+        'orange',
+        'black',
+        'green',
+        'brown',
+        'yellow',
+        'red',
+    ];
 
+
+    function getRandom() {
+        let random = colors[Math.floor(Math.random()*colors.length)];
+        return random;
+    }
+
+
+    h1.addEventListener('click', function(){
+        let random = getRandom();
+        h1.style.color = random;
     });
 
 
+ 
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
