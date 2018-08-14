@@ -77,13 +77,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Appended h6 element (with text node) to the divcontainer element.
     divContainer.appendChild(h6);
-    document.body.appendChild(divContainer);
+    //document.body.appendChild(divContainer);
 
-    //let button = document.createElement('button');
-    //let btnText = document.createTextNode('Double Click Me!');
-    // button.appendChild(btnText);
-    //document.body.appendChild(button);
 
+    //create an array with random colors
     let colors = [
         'pink',
         'blue',
@@ -95,20 +92,59 @@ window.addEventListener('DOMContentLoaded', function () {
         'red',
     ];
 
-
+    //created a function that applies random colors from the created array to elements.
     function getRandom() {
-        let random = colors[Math.floor(Math.random()*colors.length)];
+        let random = colors[Math.floor(Math.random() * colors.length)];
         return random;
     }
 
+    //created a button when double clicked, it applies random color function to each header.
+    let button = document.createElement('button');
+    let btnText = document.createTextNode('Change Colors!');
+    button.appendChild(btnText);
+    document.body.appendChild(button);
 
-    h1.addEventListener('click', function(){
-        let random = getRandom();
-        h1.style.color = random;
-    });
+    //created an event listener that calls the random color function when double clicked and changes color to h1.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h1.style.color = randomColor;
 
+    })
 
- 
+    //created an event listener that calls the random color function when double clicked and changes color to h2.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h2.style.color = randomColor;
+
+    })
+
+    //created an event listener that calls the random color function when double clicked and changes color to h3.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h3.style.color = randomColor;
+
+    })
+
+    //created an event listener that calls the random color function when double clicked and changes color to h4.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h4.style.color = randomColor;
+
+    })
+
+    //created an event listener that calls the random color function when double clicked and changes color to h5.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h5.style.color = randomColor;
+
+    })
+
+    //created an event listener that calls the random color function when double clicked and changes color to h6.
+    button.addEventListener('dblclick', function () {
+        let randomColor = getRandom();
+        h6.style.color = randomColor;
+
+    })
 
 
 });
