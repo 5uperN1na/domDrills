@@ -146,6 +146,49 @@ window.addEventListener('DOMContentLoaded', function () {
 
     })
 
+    //global variable for counter
+    let counter = 1;
+
+    //let ol = document.createElement('ol');
+
+    //created function to add to list increased by 1 each time button is clicked.
+    function addItems() {
+        let li = document.createElement('li');
+        let liText = document.createTextNode('This is list item' + ' ' + counter);
+        li.appendChild(liText);
+        //ol.appendChild(li);
+        document.body.appendChild(li);
+        counter++;
+    }
+
+    //Created button and event listener to add to list when clicked.
+    let listButton = document.createElement('button');
+    let listBtnText = document.createTextNode('Add new list item!');
+    listButton.appendChild(listBtnText);
+    document.body.appendChild(listButton);
+
+    listButton.addEventListener('click', function () {
+        let add = addItems();
+        return add;
+
+    })
+
+    //Calling the random color function to change color of list item. ***Not working***
+    listButton.addEventListener('click', function () {
+        let randomColor = getRandom();
+        li.style.color = randomColor;
+
+    })
+
+    //Trying to remove the item list when double clicked.  **Not working**
+    listButton.addEventListener('dblclick', function () {
+        li.remove();
+
+    })
+
+
+
+
 
 });
 
