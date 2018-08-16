@@ -98,67 +98,67 @@ window.addEventListener('DOMContentLoaded', function () {
         return random;
     }
 
-    //created a button when double clicked, it applies random color function to each header.
-    let button = document.createElement('button');
-    let btnText = document.createTextNode('Change Colors!');
-    button.appendChild(btnText);
-    document.body.appendChild(button);
-
     //created an event listener that calls the random color function when double clicked and changes color to h1.
-    button.addEventListener('dblclick', function () {
+    h1.addEventListener('click', function () {
         let randomColor = getRandom();
         h1.style.color = randomColor;
-
     })
 
     //created an event listener that calls the random color function when double clicked and changes color to h2.
-    button.addEventListener('dblclick', function () {
+    h2.addEventListener('click', function () {
         let randomColor = getRandom();
         h2.style.color = randomColor;
-
     })
 
     //created an event listener that calls the random color function when double clicked and changes color to h3.
-    button.addEventListener('dblclick', function () {
+    h3.addEventListener('click', function () {
         let randomColor = getRandom();
         h3.style.color = randomColor;
-
     })
 
-    //created an event listener that calls the random color function when double clicked and changes color to h4.
-    button.addEventListener('dblclick', function () {
+     //created an event listener that calls the random color function when double clicked and changes color to h4.
+     h4.addEventListener('click', function () {
         let randomColor = getRandom();
         h4.style.color = randomColor;
-
     })
 
-    //created an event listener that calls the random color function when double clicked and changes color to h5.
-    button.addEventListener('dblclick', function () {
+       //created an event listener that calls the random color function when double clicked and changes color to h5.
+       h5.addEventListener('click', function () {
         let randomColor = getRandom();
         h5.style.color = randomColor;
-
     })
 
-    //created an event listener that calls the random color function when double clicked and changes color to h6.
-    button.addEventListener('dblclick', function () {
-        let randomColor = getRandom();
-        h6.style.color = randomColor;
+        //created an event listener that calls the random color function when double clicked and changes color to h6.
+        h6.addEventListener('click', function () {
+            let randomColor = getRandom();
+            h6.style.color = randomColor;
+        })
 
-    })
 
-    //global variable for counter
+
+
+
+
     let counter = 1;
+    let ol = document.createElement('ol');
 
-    //let ol = document.createElement('ol');
-
-    //created function to add to list increased by 1 each time button is clicked.
+    //created function to add to list increased by 1 each time button is clicked once.
     function addItems() {
         let li = document.createElement('li');
         let liText = document.createTextNode('This is list item' + ' ' + counter);
         li.appendChild(liText);
-        //ol.appendChild(li);
-        document.body.appendChild(li);
+        ol.appendChild(li);
+        document.body.appendChild(ol);
         counter++;
+    }
+
+    //not working
+    function removeItems() {
+
+        //ol.removeChild(li);
+        //ol.parentNode.removeChild(li);
+        //document.removeChild(li)
+        this.remove();
     }
 
     //Created button and event listener to add to list when clicked.
@@ -169,22 +169,16 @@ window.addEventListener('DOMContentLoaded', function () {
 
     listButton.addEventListener('click', function () {
         let add = addItems();
-        return add;
-
-    })
-
-    //Calling the random color function to change color of list item. ***Not working***
-    listButton.addEventListener('click', function () {
-        let randomColor = getRandom();
-        li.style.color = randomColor;
 
     })
 
     //Trying to remove the item list when double clicked.  **Not working**
     listButton.addEventListener('dblclick', function () {
-        li.remove();
+        let remove = removeItems();
+        return remove;
 
     })
+
 
 
 
