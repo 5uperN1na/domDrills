@@ -180,28 +180,31 @@ window.addEventListener('DOMContentLoaded', function () {
         ol.appendChild(li);
         let liText = document.createTextNode('This is list item' + ' ' + counter);
         li.appendChild(liText);
-        document.body.appendChild(li);
+        document.body.appendChild(ol);
         counter++;
+
+
+        li.addEventListener("dblclick", function(){
+            this.remove();
+          
+        });
 
     }
 
     //Used button and event listener to add to list when clicked.
-    listBtn.addEventListener('click', function () {
-        let add = addItems();
-        //return add;
 
-    })
+    listBtn.addEventListener('click', addItems);
 
-    function removeItems() {
-        ol.removeChild(li);
+   // function removeItems() {
+      //  ol.parentNode.removeChild(ol);
 
-    }
+    //}
 
-    li.addEventListener('dblclick', function () {
-        let remove1 = removeItems();
+   // ol.addEventListener('dblclick', function () {
+        //let remove1 = removeItems();
         //return remove1;
 
-    })
+    //})
 
 });
 
