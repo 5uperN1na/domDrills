@@ -183,28 +183,17 @@ window.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(ol);
         counter++;
 
-
-        li.addEventListener("dblclick", function(){
-            this.remove();
-          
-        });
-
+        //created an event listener that calls remoteItems function.
+        li.addEventListener('dblclick', removeItems);
     }
 
-    //Used button and event listener to add to list when clicked.
-
+    //created button in html file with an event listener here, when clicked, it adds to list when clicked.
     listBtn.addEventListener('click', addItems);
 
-   // function removeItems() {
-      //  ol.parentNode.removeChild(ol);
-
-    //}
-
-   // ol.addEventListener('dblclick', function () {
-        //let remove1 = removeItems();
-        //return remove1;
-
-    //})
+    //created a function to remove each item list one by one.
+    function removeItems() {
+        this.remove();
+    }
 
 });
 
