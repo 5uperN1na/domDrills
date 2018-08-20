@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // Appended h1 element (with text node) to the divcontainer element.
     divContainer.appendChild(h1);
-    document.body.appendChild(divContainer);
+    
 
     //Created H1 class
     h1.className = 'h1';
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // Appended h2 element (with text node) to the divcontainer element.
     divContainer.appendChild(h2);
-    document.body.appendChild(divContainer);
+   
 
     //Created h3 element and text node then appended text node to h3 element.
     let h3 = document.createElement('h3');
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Appended h3 element (with text node) to the divcontainer element.
     divContainer.appendChild(h3);
-    document.body.appendChild(divContainer);
+     
 
     //Created h4 element and text node then appended text node to h4 element.
     let h4 = document.createElement('h4');
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Appended h4 element (with text node) to the divcontainer element.
     divContainer.appendChild(h4);
-    document.body.appendChild(divContainer);
+    
 
     //Created h5 element and text node then appended text node to h5 element.
     let h5 = document.createElement('h5');
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Appended h5 element (with text node) to the divcontainer element.
     divContainer.appendChild(h5);
-    document.body.appendChild(divContainer);
+    
 
     //Created h6 element and text node then appended text node to h6 element.
 
@@ -77,7 +77,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Appended h6 element (with text node) to the divcontainer element.
     divContainer.appendChild(h6);
-    //document.body.appendChild(divContainer);
+    
+    //Appended div container to body.
+    document.body.appendChild(divContainer);
 
 
     //create an array with random colors
@@ -180,12 +182,17 @@ window.addEventListener('DOMContentLoaded', function () {
         ol.appendChild(li);
         let liText = document.createTextNode('This is list item' + ' ' + counter);
         li.appendChild(liText);
-        document.body.appendChild(ol);
         counter++;
 
         //created an event listener that calls remoteItems function.
         li.addEventListener('dblclick', removeItems);
     }
+
+    //Appended ol element to body.
+    document.body.appendChild(ol);
+
+    //created list button from the button created in HTML by ID.
+    let listBtn = document.getElementById('listBtn');
 
     //created button in html file with an event listener here, when clicked, it adds to list when clicked.
     listBtn.addEventListener('click', addItems);
